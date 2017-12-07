@@ -1,0 +1,14 @@
+<header>	
+  <h1>Signup</h1>			
+</header>		
+<form #submitForm="ngForm" (submit)="onSubmit()">	
+  <label for="name">User name</label>
+  <input type="text" id="name" [(ngModel)]="user.name" name="name">	
+  <label for="password">Password</label>		
+  <input type="password" id="password" [(ngModel)]="user.password" name="password" required>		
+  <label for="pwdconfirm">Confirm password</label>		
+  <input type="password" id="pwdconfirm" [(ngModel)]="user.pwdconfirm" name="pwdconfirm" required>		
+  <label for="email">Email</label>		
+  <input type="email" id="email" [(ngModel)]="user.email" name="email" required>		
+  <button class="submit" type="submit">Signup</button>			
+</form>

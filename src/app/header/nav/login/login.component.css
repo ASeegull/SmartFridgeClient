@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+form > * {
+    margin-left: 1.2rem;
+}
+
+.submit {		
+    font-size: 1.1rem;
+    color: #fff;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #fff;
+    width: 7rem;
+    height: 2rem;
+    background-color: darkslategrey;
+    cursor: pointer;		
+}		
+		
+.submit:hover {		
+    border-color: #fff;		
+    background-color: #fff;		
+    color: darkslategrey;
+    font-weight: bold;
+}
+
+input {
+    outline-color: #eaeef3;
+    padding-left: 1rem;
+}

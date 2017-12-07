@@ -1,0 +1,45 @@
+:host {
+    width: 50%;
+}
+
+input {		
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    height: 1.3rem;
+    outline-color: #eaeef3;
+    padding-left: 1rem;
+}
+		
+form > * {		
+    margin-bottom: 1rem;		
+}		
+		
+.submit {		
+    float: right;
+    font-size: 1.1rem;
+    color: #184646;
+    margin-top: 0.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #457d7d;
+    width: 7rem;
+    height: 2rem;
+    background-color: #a7c7c7;
+    cursor: pointer;		
+}		
+		
+.submit:hover {		
+    border-color: darkslategrey;		
+    background-color: darkslategrey;		
+    color: white;		
+}		
+		
+header {		
+    height: 8vh;
+    margin-bottom: 2rem;		
+    display: flex;		
+    justify-content: space-between;		
+    background-color: inherit;		
+    color: inherit;		
+}		

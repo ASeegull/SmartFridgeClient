@@ -1,0 +1,29 @@
+:host {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-nav {
+    border: 2px solid #fff;
+    border-radius: 25px;
+    width: 7rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-nav > span {
+    align-self: center;
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.btn-nav:hover {
+    background-color: #fff;
+    color: darkslategrey;
+    cursor: pointer;
+}
