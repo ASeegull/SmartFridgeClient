@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://localhost:9000'
+  apiURL: 'https://peaceful-thicket-55332.herokuapp.com'
 };
