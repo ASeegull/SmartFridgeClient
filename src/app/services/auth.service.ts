@@ -32,7 +32,7 @@ export class AuthService {
   login(creds) {
     console.log(creds);
     this.http
-      .post(environment.apiURL + '/client/login', creds)
+      .post(environment.apiURL + 'client/login', creds)
       .subscribe(
         data => {
           console.log(data);
@@ -46,7 +46,7 @@ export class AuthService {
   signup(user: User) {
     console.log(user);
     this.http
-      .post(environment.apiURL + '/client/signup', user)
+      .post(environment.apiURL + 'client/signup', user)
       .subscribe(
         data => {
           console.log(data);
@@ -59,7 +59,7 @@ export class AuthService {
 
   logout() {
       this.http
-        .get(environment.apiURL + '/client/logout')
+        .get(environment.apiURL + 'client/logout')
         .subscribe(
           data => {
             console.log(data);

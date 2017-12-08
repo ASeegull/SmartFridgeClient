@@ -12,13 +12,13 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   getRecipes() {
-    this.http.get<Recipe[]>(environment.apiURL + '/client/allRecipes').subscribe(data => {
+    this.http.get<Recipe[]>(environment.apiURL + 'client/allRecipes').subscribe(data => {
       this.recipes = data;
     });
   }
 
   getProducts() {
-    this.http.get<Product[]>(environment.apiURL + '/client/fridgeContent').subscribe(data => {
+    this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent').subscribe(data => {
       this.products = data;
     });
   }
