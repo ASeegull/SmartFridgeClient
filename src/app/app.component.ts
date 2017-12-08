@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +6,4 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-
-  constructor(public authService: AuthService) {
-  }
-
-  ngOnInit() {
-    this.authService.getCookies();
-    this.authService.redirect();
-  }
-}
+export class AppComponent {}

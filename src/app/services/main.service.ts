@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Recipe } from '../models/recipe';
 import { Product } from '../models/product';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MainService {
@@ -11,13 +12,13 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   getRecipes() {
-    this.http.get<Recipe[]>('/client/recipes').subscribe(data => {
+    this.http.get<Recipe[]>(environment.apiURL + '/client/allRecipes').subscribe(data => {
       this.recipes = data;
     });
   }
 
   getProducts() {
-    this.http.get<Product[]>('/client/products').subscribe(data => {
+    this.http.get<Product[]>(environment.apiURL + '/client/fridgeContent').subscribe(data => {
       this.products = data;
     });
   }

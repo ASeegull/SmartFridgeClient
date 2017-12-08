@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
@@ -20,6 +19,7 @@ import { RecipeComponent } from './main/recipe/recipe.component';
 
 import { MainService } from './services/main.service';
 import { AuthService } from './services/auth.service';
+import { SlidebarComponent } from './header/nav/menu/slidebar/slidebar.component';
 
 const appRoutes: Routes = [
   {path: '', component: InitComponent},
@@ -41,7 +41,8 @@ const appRoutes: Routes = [
     MenuComponent,
     RecipesComponent,
     ItemComponent,
-    RecipeComponent
+    RecipeComponent,
+    SlidebarComponent
   ],
   imports: [
     BrowserModule,

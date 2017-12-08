@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { Login, User } from '../models/auth';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
@@ -28,10 +29,10 @@ export class AuthService {
     (this.auth) ? this.router.navigate(['/home']) : this.router.navigate(['/signup']);
   }
 
-  login(creds: Login) {
+  login(creds) {
     console.log(creds);
     this.http
-      .post('/client/login', creds)
+      .post(environment.apiURL + '/client/login', creds)
       .subscribe(
         data => {
           console.log(data);
@@ -45,7 +46,7 @@ export class AuthService {
   signup(user: User) {
     console.log(user);
     this.http
-      .post('/client/signup', user)
+      .post(environment.apiURL + '/client/signup', user)
       .subscribe(
         data => {
           console.log(data);
@@ -55,4 +56,19 @@ export class AuthService {
         }
       );
   }
-}
+
+  logout() {
+      this.http
+        .get(environment.apiURL + '/client/logout')
+        .subscribe(
+          data => {
+            console.log(data);
+          },
+          err => {
+            console.log('Something went wrong!', err);
+          }
+        );
+
+        this.router.navigate(['/signup']);
+    }
+  }

@@ -1,7 +1,9 @@
-<p>
-  recipes works!
-</p>
-
+<app-header></app-header>
 <div class="wrapper" *ngFor="let recipe of recipes">
-  <app-recipe></app-recipe>
+    <p>{{ recipe.title }}</p>
+    <p>{{ recipe.description }}</p>
+    <p>{{ recipe.coockingTimeMin }}</p>
+    <p>{{ recipe.complexity }}</p>
+    <p>{{ recipe.ingredients }}</p>
 </div>
+<p>It works!</p>

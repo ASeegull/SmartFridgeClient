@@ -1,11 +1,17 @@
-export interface Login {
+export class Login {
     emai: string;
     password: string;
+    constructor(obj?: any) {
+        this.emai = obj && obj.emai;
+    }
   }
 
-export interface User {
+export class User {
     name: string;
     password: string;
     pwdconfirm: string;
-    emai: string;
+    email: string;
+    constructor(obj?: any) {
+        this.name = obj && obj.name;
+    }
 }

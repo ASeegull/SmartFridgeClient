@@ -9,11 +9,12 @@ import { AuthService } from '../../../services/auth.service';
 })
 
 export class LoginComponent {
-  creds: Login;
+  creds: Login = new Login();
 
   constructor(public authService: AuthService) {}
 
   onSubmit() {
+    alert(JSON.stringify(this.creds));
     this.authService.login(this.creds);
   }
 

@@ -1,0 +1,11 @@
+.slider {		
+    font-size: 1.1rem;
+    color: #fff;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #fff;
+    width: 7rem;
+    height: 2rem;
+    background-color: darkslategrey;
+    cursor: pointer;		
+}	

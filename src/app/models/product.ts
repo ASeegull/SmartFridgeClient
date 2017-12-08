@@ -1,5 +1,9 @@
-export interface Product {
-  Name: string;
-  ShelfLife: number;
-  Units: number;
+export class Product {
+  name: string;
+  shelfLife: number;
+  units: number;
+
+  constructor(obj?: any) {
+    this.name = obj && obj.name;
+  }
 }

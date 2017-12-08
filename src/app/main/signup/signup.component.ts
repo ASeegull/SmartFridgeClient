@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  user: User;
+  user: User = new User();
 
   constructor(public authService: AuthService) { }
 

@@ -1,9 +1,11 @@
 import { Ingredient } from './ingredient';
 
-export interface Recipe {
+export class Recipe {
   title: string;
   description: string;
   coockingTimeMin: number;
   complexity: string;
-  ingredients: Ingredient[];
+  constructor(obj?: any) {
+    this.title = obj && obj.title;
+  }
 }
