@@ -1,8 +1,8 @@
 export class Login {
-    emai: string;
+    email: string;
     password: string;
     constructor(obj?: any) {
-        this.emai = obj && obj.emai;
+        this.email = obj && obj.emai;
     }
   }
 
