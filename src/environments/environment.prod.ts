@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://peaceful-thicket-55332.herokuapp.com'
+  apiURL: 'https://aqueous-brushlands-51147.herokuapp.com/'
 };
