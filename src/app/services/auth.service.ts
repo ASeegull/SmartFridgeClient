@@ -32,10 +32,14 @@ export class AuthService {
   login(creds) {
     console.log(creds);
     this.http
-      .post(environment.apiURL + 'client/login', creds)
+      .post(environment.apiURL + 'client/login', creds, { observe: 'response' })
       .subscribe(
-        data => {
-          console.log(data);
+        res => {
+          console.log(res);
+          if (res.status === 200) {
+            this.auth = true;
+            this.router.navigate(['/home']);
+          }
         },
         err => {
           console.log('Something went wrong!', err);
@@ -44,28 +48,36 @@ export class AuthService {
   }
 
   signup(user: User) {
+    const body = JSON.stringify({login: user.name, pass: user.password});
     console.log(user);
     this.http
-      .post(environment.apiURL + 'client/signup', user)
+      .post(environment.apiURL + 'client/signup', body, { observe: 'response' })
       .subscribe(
-        data => {
-          console.log(data);
+        (res) => {
+          console.log(res);
+          if (res.status === 200) {
+            this.auth = true;
+            this.router.navigate(['/home']);
+          }
         },
-        err => {
-          console.log('Something went wrong!', err);
+        (err) => {
+          console.log(err);
         }
       );
   }
 
   logout() {
       this.http
-        .get(environment.apiURL + 'client/logout')
+        .get(environment.apiURL + 'client/logout', { observe: 'response' })
         .subscribe(
-          data => {
-            console.log(data);
+          res => {
+            if (res.status === 200) {
+              this.auth = false;
+              this.router.navigate(['/signup']);
+            }
           },
           err => {
-            console.log('Something went wrong!', err);
+            console.log(err);
           }
         );
 
