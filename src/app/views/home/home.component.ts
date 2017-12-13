@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(public mainService: MainService) { }
 
   ngOnInit() {
+    this.mainService.getProducts();
     this.products = this.mainService.showProducts();
   }
 

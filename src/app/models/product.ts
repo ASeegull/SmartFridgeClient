@@ -1,9 +1,8 @@
 export class Product {
-  name: string;
-  shelfLife: number;
-  units: number;
+  Product: string;
+  Weight: number;
 
   constructor(obj?: any) {
-    this.name = obj && obj.name;
+    this.Product = obj && obj.Product;
   }
 }

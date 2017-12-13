@@ -30,12 +30,13 @@ export class AuthService {
   }
 
   login(creds) {
-    console.log(creds);
+    const body = JSON.stringify({login: creds.name, pass: creds.password});
+    console.log(body);
     this.http
-      .post(environment.apiURL + 'client/login', creds, { observe: 'response' })
+      .post(environment.apiURL + 'client/login', body, { observe: 'response', withCredentials: true })
       .subscribe(
         res => {
-          console.log(res);
+          console.log(res.headers);
           if (res.status === 200) {
             this.auth = true;
             this.router.navigate(['/home']);
@@ -49,9 +50,9 @@ export class AuthService {
 
   signup(user: User) {
     const body = JSON.stringify({login: user.name, pass: user.password});
-    console.log(user);
+    console.log(body);
     this.http
-      .post(environment.apiURL + 'client/signup', body, { observe: 'response' })
+      .post(environment.apiURL + 'client/signup', body, { observe: 'response', withCredentials: true })
       .subscribe(
         (res) => {
           console.log(res);
@@ -68,7 +69,7 @@ export class AuthService {
 
   logout() {
       this.http
-        .get(environment.apiURL + 'client/logout', { observe: 'response' })
+        .get(environment.apiURL + 'client/logout', { observe: 'response', withCredentials: true })
         .subscribe(
           res => {
             if (res.status === 200) {

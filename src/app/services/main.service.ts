@@ -7,18 +7,29 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class MainService {
   recipes: Recipe[];
+  myRecipes: Recipe[];
   products: Product[];
 
   constructor(private http: HttpClient) { }
 
   getRecipes() {
-    this.http.get<Recipe[]>(environment.apiURL + 'client/allRecipes').subscribe(data => {
+    this.http.get<Recipe[]>(environment.apiURL + 'client/allRecipes', { withCredentials: true }).subscribe(data => {
+      console.log(data);
       this.recipes = data;
     });
   }
 
+  getMyRecipes() {
+    this.http.get<Recipe[]>(environment.apiURL + 'client/searchRecipes', { withCredentials: true }).subscribe(data => {
+      console.log(data);
+      this.myRecipes = data;
+    });
+  }
+
+
   getProducts() {
-    this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent').subscribe(data => {
+    this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent', { withCredentials: true }).subscribe(data => {
+      console.log(data);
       this.products = data;
     });
   }
@@ -31,4 +42,7 @@ export class MainService {
     return this.recipes;
   }
 
+  showMyRecipes(): Recipe[] {
+    return this.myRecipes;
+  }
 }

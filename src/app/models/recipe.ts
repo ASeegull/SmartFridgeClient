@@ -5,6 +5,7 @@ export class Recipe {
   description: string;
   coockingTimeMin: number;
   complexity: string;
+  ingredients: string[];
   constructor(obj?: any) {
     this.title = obj && obj.title;
   }

@@ -1,0 +1,13 @@
+.wrapper {
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 3%;
+    box-shadow: 0 0 5px rgb(23, 43, 43);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper > * {
+    margin: 1rem 1.5rem;
+}

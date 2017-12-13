@@ -20,6 +20,7 @@ import { RecipeComponent } from './main/recipe/recipe.component';
 import { MainService } from './services/main.service';
 import { AuthService } from './services/auth.service';
 import { SlidebarComponent } from './header/nav/menu/slidebar/slidebar.component';
+import { SearchrecipesComponent } from './views/searchrecipes/searchrecipes.component';
 
 const appRoutes: Routes = [
   {path: '', component: InitComponent},
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     RecipesComponent,
     ItemComponent,
     RecipeComponent,
-    SlidebarComponent
+    SlidebarComponent,
+    SearchrecipesComponent
   ],
   imports: [
     BrowserModule,
