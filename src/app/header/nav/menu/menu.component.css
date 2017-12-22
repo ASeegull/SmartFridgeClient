@@ -1,11 +1,14 @@
 .slider {		
-    font-size: 1.1rem;
-    color: #fff;
-    border-radius: 15px;
-    outline: none;
-    border: 2px solid #fff;
-    width: 7rem;
-    height: 2rem;
-    background-color: darkslategrey;
-    cursor: pointer;		
-}	
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between
+}
+
+.el {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}

@@ -26,7 +26,8 @@ const appRoutes: Routes = [
   {path: '', component: InitComponent},
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: AuthComponent},
-  {path: 'recipes', component: RecipesComponent}
+  {path: 'recipes', component: RecipesComponent},
+  {path: 'searchrecipes', component: SearchrecipesComponent}
 ];
 
 @NgModule({

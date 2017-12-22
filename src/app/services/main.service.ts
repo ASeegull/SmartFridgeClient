@@ -13,25 +13,16 @@ export class MainService {
   constructor(private http: HttpClient) { }
 
   getRecipes() {
-    this.http.get<Recipe[]>(environment.apiURL + 'client/allRecipes', { withCredentials: true }).subscribe(data => {
-      console.log(data);
-      this.recipes = data;
-    });
+    return this.http.get<Recipe[]>(environment.apiURL + 'client/allRecipes', { withCredentials: true });
   }
 
   getMyRecipes() {
-    this.http.get<Recipe[]>(environment.apiURL + 'client/searchRecipes', { withCredentials: true }).subscribe(data => {
-      console.log(data);
-      this.myRecipes = data;
-    });
+    return this.http.get<Recipe[]>(environment.apiURL + 'client/searchRecipes', { withCredentials: true });
   }
 
 
   getProducts() {
-    this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent', { withCredentials: true }).subscribe(data => {
-      console.log(data);
-      this.products = data;
-    });
+    return this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent', { withCredentials: true });
   }
 
   showProducts(): Product[] {

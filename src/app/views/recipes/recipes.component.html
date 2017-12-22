@@ -1,8 +1,10 @@
 <app-header></app-header>
+<div class="content">
 <div class="wrapper" *ngFor="let recipe of recipes">
     <h3>{{ recipe.title }}</h3>
     <div>{{ recipe.description }}</div>
     <div class="time">{{ recipe.coockingTimeMin }}</div>
     <div class="complexity">{{ recipe.complexity }}</div>
     <div>{{ recipe.ingredients }}</div>
+</div>
 </div>

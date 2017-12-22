@@ -14,8 +14,8 @@ export class RecipesComponent implements OnInit {
   constructor(public mainService: MainService) {}
 
   ngOnInit() {
-    this.mainService.getRecipes();
-    this.recipes = this.mainService.showRecipes();
-  }
-
+    this.mainService.getRecipes().subscribe(data => {
+      this.recipes = data;
+  });
+ }
 }

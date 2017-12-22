@@ -1,19 +1,25 @@
 :host {
     position: fixed;
-    height: 90vh;
+    height: 100vh;
     width: 25%;
     left: auto;
-    top: 10vh;
     right: 0;
     bottom: 0;
     background-color: rgb(81, 121, 121);
 }
 
-/* .closeBtn {
-   color: #ccc;
-   text-align: end;
-   font-size: 30px;
-} */
+.closeBtn {
+    width: 2rem;
+    margin-bottom: 1.5rem;
+    align-self: end;
+    color: #ccc;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #fff;
+}
 
 .wrapper{
     width: 80%;
@@ -25,4 +31,8 @@
 li {
     font-size: 1.5rem;
     padding-bottom: 1.2rem;
+}
+
+a:hover {
+    text-shadow: 0 0 5px #91b0b0;
 }
