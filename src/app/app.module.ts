@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,6 +22,7 @@ import { MainService } from './services/main.service';
 import { AuthService } from './services/auth.service';
 import { SlidebarComponent } from './header/nav/menu/slidebar/slidebar.component';
 import { SearchrecipesComponent } from './views/searchrecipes/searchrecipes.component';
+import { SlidebarService } from './services/slidebar.service';
 
 const appRoutes: Routes = [
   {path: '', component: InitComponent},
@@ -51,11 +53,13 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthService,
-    MainService
+    MainService,
+    SlidebarService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../../services/auth.service';
+import { SlidebarService } from '../../../../services/slidebar.service';
+
 
 @Component({
   selector: 'app-slidebar',
@@ -8,12 +10,16 @@ import { AuthService } from '../../../../services/auth.service';
 })
 export class SlidebarComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public slidebarService: SlidebarService) { }
 
   ngOnInit() {
   }
 
-  logout() {
+  toggleMenu() {
+    this.slidebarService.toggle();
+  }
 
+  logout() {
+    this.authService.logout();
   }
 }
