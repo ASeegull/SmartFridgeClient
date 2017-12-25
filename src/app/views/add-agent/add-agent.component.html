@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="content">
+<header>	
+  <h1>New Agent</h1>			
+</header>		
+<form #newAgent="ngForm" (submit)="onSubmit()">	
+  <label for="agentID">Please enter serial number</label>
+  <input type="text" id="agentID" [(ngModel)]="agent.agentID" name="agentID" required>
+  <p>If container is empty yet, you can skip these fields</p>	
+  <label for="product">Product</label>	
+  <input type="text" id="product" [(ngModel)]="agent.product" name="product">
+  <label for="expires">Expiration Date</label>	
+  <input type="date" id="expires" [(ngModel)]="agent.stateExpires" name="stateExpires">
+  <footer>
+    <button class="submit" type="submit">Add Agent</button>
+    <p *ngIf="success"><i class="fa fa-check"></i>Your agent is successfully registered</p>
+    <p *ngIf="failed"><i class="fa fa-times" aria-hidden="true"></i>
+      Failed to register this agent</p>
+</footer>
+</form>
+</div>
+</div>

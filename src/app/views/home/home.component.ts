@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 import { MainService } from '../../services/main.service';
-import { Product } from '../../models/product';
+import { Agent } from '../../models/agent';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,26 @@ import { Product } from '../../models/product';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products: Product[];
-  constructor(public mainService: MainService) { }
+  products: Agent[];
+  noAgents = false;
+  constructor(
+    public mainService: MainService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
     this.mainService.getProducts().subscribe(data => {
       this.products = data;
-      console.log(data);
+      if (this.products.length === 0) {
+        this.noAgents = true;
+      }
     });
   }
 
+  searchByProduct() {
+  }
+
+  newAgentRedirect() {
+    this.router.navigate(['/newAgent']);
+  }
 }

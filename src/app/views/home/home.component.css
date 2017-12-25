@@ -70,3 +70,30 @@ header {
 .text-alert {
     color: rgb(216, 45, 45);
 }
+
+.noAgents {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 52vh;
+    flex-direction: column;
+}
+
+.addAgent {
+    font-size: 1.1rem;
+    color: #fff;
+    border-radius: 30px;
+    outline: none;
+    border: 2px solid #fff;
+    width: 20%;
+    height: 8%;
+    padding: 1rem;
+    background-color: darkslategrey;
+    cursor: pointer;
+    text-align: center;
+}
+
+.addAgent:hover {
+    color: #cdd6d6;
+    background-color: #367373;
+}

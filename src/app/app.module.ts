@@ -10,7 +10,6 @@ import { NavComponent } from './header/nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './header/nav/login/login.component';
 import { HomeComponent } from './views/home/home.component';
-import { InitComponent } from './views/init/init.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { AuthComponent } from './views/auth/auth.component';
 import { MenuComponent } from './header/nav/menu/menu.component';
@@ -23,13 +22,14 @@ import { AuthService } from './services/auth.service';
 import { SlidebarComponent } from './header/nav/menu/slidebar/slidebar.component';
 import { SearchrecipesComponent } from './views/searchrecipes/searchrecipes.component';
 import { SlidebarService } from './services/slidebar.service';
+import { AddAgentComponent } from './views/add-agent/add-agent.component';
 
 const appRoutes: Routes = [
-  {path: '', component: InitComponent},
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: AuthComponent},
   {path: 'recipes', component: RecipesComponent},
-  {path: 'searchrecipes', component: SearchrecipesComponent}
+  {path: 'searchrecipes', component: SearchrecipesComponent},
+  {path: 'newAgent', component: AddAgentComponent}
 ];
 
 @NgModule({
@@ -39,7 +39,6 @@ const appRoutes: Routes = [
     NavComponent,
     LoginComponent,
     HomeComponent,
-    InitComponent,
     SignupComponent,
     AuthComponent,
     MenuComponent,
@@ -47,7 +46,8 @@ const appRoutes: Routes = [
     ItemComponent,
     RecipeComponent,
     SlidebarComponent,
-    SearchrecipesComponent
+    SearchrecipesComponent,
+    AddAgentComponent
   ],
   imports: [
     BrowserModule,

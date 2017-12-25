@@ -13,16 +13,10 @@ export class AuthService {
     private http: HttpClient
   ) {}
 
-  getCookies() {
+  checkLogin(): boolean {
     if (document.cookie) {
       this.auth = true;
     }
-
-    console.log(document.cookie);
-  }
-
-  checkLogin(): boolean {
-    this.getCookies();
     return this.auth;
   }
 
