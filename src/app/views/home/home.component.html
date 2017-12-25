@@ -1,9 +1,35 @@
 <app-header></app-header>
-<div class="content">
-<div class="wrapper" *ngFor="let product of products">
-    <h3>{{ product.Product }}</h3>
-    <div>{{ product.Weight }}</div>
-    <div>{{ product.StateExpires }}</div>
-    <div>{{ product.Condition }}</div>
-</div>
-</div>
+<section class="content">
+    <article class="card" *ngFor="let product of products"
+    [ngClass]="{
+        'expiresSoon':product.Condition === 'warn',
+        'expired':product.Condition === 'expired'
+    }">
+        <header>
+            <h3 class="title">{{ product.Product | titlecase }}</h3>
+            <div class="options">
+                <div class="search" title="Search recepies by this product"
+                    [ngClass]="{'search-accented':product.Condition === 'warn'}"
+                    (click)="searchByProduct();">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="edit" title="Update agent content" (click)="edit();">
+                    <i class="fa fa-cog"></i>
+                </div>
+            </div>
+        </header>
+        <main>
+            <img class="product-image" src="assets/tomato.jpg" alt="Помідорка"
+            [ngClass]="{'product-expired':product.Condition === 'expired'}">
+            <p>Weight: {{ product.Weight }}g</p>
+            <p>
+                <i *ngIf="product.Condition === 'ok'" class="fa fa-smile-o text-ok" aria-hidden="true"></i>
+                <i *ngIf="product.Condition === 'warn'" class="fa fa-exclamation-triangle text-warn" aria-hidden="true"></i>
+                <i *ngIf="product.Condition === 'expired'" class="fa fa-frown-o text-alert" aria-hidden="true"></i>
+                Expires: {{ product.StateExpires }}
+            </p>
+            <p *ngIf="product.Condition === 'warn'" class="text-warn">This product is about to expire... Let's see, how we can use it</p>
+            <p *ngIf="product.Condition === 'expired'" class="text-alert">Oops... This product isn't safe anymore</p>
+        </main>
+    </article>
+</section>

@@ -9,7 +9,6 @@ import { Product } from '../../models/product';
 })
 export class HomeComponent implements OnInit {
   products: Product[];
-
   constructor(public mainService: MainService) { }
 
   ngOnInit() {
