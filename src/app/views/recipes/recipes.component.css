@@ -1,11 +1,9 @@
 .card {
     width: 450px;
     box-shadow: 0 0 5px rgb(23, 43, 43);
-    padding: 1rem;
-    display: flex;
-    flex-flow: column;
+    padding: 2rem 1rem;
     background-color: white;
-    margin: 1rem;
+    margin: 2rem 1rem;
 }
 
 .card > * {
@@ -53,4 +51,8 @@ header {
 .complexity-hard {
     background-color: rgb(216, 45, 45);
     color: #ffe2e2;
+}
+
+.description {
+    margin-bottom: 0.7rem;
 }

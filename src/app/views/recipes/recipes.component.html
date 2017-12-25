@@ -1,28 +1,29 @@
 <app-header></app-header>
-<div class="content">
-<div class="card" *ngFor="let recipe of recipes">
-    <header>
-    <h3 class="title">{{ recipe.title }}</h3>
-    <div class="tags">
-        <div class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i>
-            {{ recipe.coockingTimeMin }} min</div>
-        <!-- <div class="complexity complexity-hard"><i class="fa fa-cogs" aria-hidden="true"></i> -->
-            <!-- <div class="complexity"><i class="fa fa-check" aria-hidden="true"></i> -->
-            <div class="complexity" [ngClass]="{
-                'complexity-easy':recipe.complexity === 'easy',
-                'complexity-normal':recipe.complexity === 'normal',
-                'complexity-hard':recipe.complexity === 'hard'
-              }">
-                <i class="fa" [ngClass]="{
-                    'fa-check':recipe.complexity === 'easy',
-                    'fa-cog':recipe.complexity === 'normal',
-                    'fa-cogs':recipe.complexity === 'hard'
-                  }" arria-hidden="true"></i>
+<section class="content">
+    <article class="card" *ngFor="let recipe of recipes">
+        <header>
+            <h3 class="title">{{ recipe.title }}</h3>
+            <div class="tags">
+                <div class="time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    {{ recipe.coockingTimeMin }} min</div>
+                <div class="complexity" [ngClass]="{
+                    'complexity-easy':recipe.complexity === 'easy',
+                    'complexity-normal':recipe.complexity === 'normal',
+                    'complexity-hard':recipe.complexity === 'hard'
+                }">
+                    <i class="fa" [ngClass]="{
+                        'fa-check':recipe.complexity === 'easy',
+                        'fa-cog':recipe.complexity === 'normal',
+                        'fa-cogs':recipe.complexity === 'hard'
+                    }" arria-hidden="true"></i>
                 {{ recipe.complexity }}
+                </div>
             </div>
-    </div>
-    </header>
-    <div>{{ recipe.description }}</div>
-    <div>{{ recipe.ingredients }}</div>
-</div>
-</div>
+        </header>
+        <main>
+            <div class="description">{{ recipe.description }}</div>
+            <div class="ingredients">{{ recipe.ingredients }}</div>
+        </main>
+    </article>
+</section>
