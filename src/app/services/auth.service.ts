@@ -22,6 +22,7 @@ export class AuthService {
   }
 
   checkLogin(): boolean {
+    this.getCookies();
     return this.auth;
   }
 
@@ -36,7 +37,6 @@ export class AuthService {
       .post(environment.apiURL + 'client/login', body, { observe: 'response', withCredentials: true })
       .subscribe(
         res => {
-          console.log(res.headers);
           if (res.status === 200) {
             this.auth = true;
             this.router.navigate(['/home']);
@@ -50,7 +50,6 @@ export class AuthService {
 
   signup(user: User) {
     const body = JSON.stringify({login: user.name, pass: user.password});
-    console.log(body);
     this.http
       .post(environment.apiURL + 'client/signup', body, { observe: 'response', withCredentials: true })
       .subscribe(

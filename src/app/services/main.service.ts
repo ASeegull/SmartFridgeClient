@@ -6,10 +6,6 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MainService {
-  recipes: Recipe[];
-  myRecipes: Recipe[];
-  products: Product[];
-
   constructor(private http: HttpClient) { }
 
   getRecipes() {
@@ -23,17 +19,5 @@ export class MainService {
 
   getProducts() {
     return this.http.get<Product[]>(environment.apiURL + 'client/fridgeContent', { withCredentials: true });
-  }
-
-  showProducts(): Product[] {
-    return this.products;
-  }
-
-  showRecipes(): Recipe[] {
-    return this.recipes;
-  }
-
-  showMyRecipes(): Recipe[] {
-    return this.myRecipes;
   }
 }
