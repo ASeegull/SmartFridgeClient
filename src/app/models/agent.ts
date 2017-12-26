@@ -5,11 +5,11 @@ export class Agent {
   stateExpires: string;
   condition: string;
 
-  constructor(obj?: any) {
-    this.agentID = obj && obj.AgentID;
-    this.product = obj && obj.Product;
-    this.weight = obj && obj.Weight;
-    this.stateExpires = obj && obj.StateExpires;
-    this.condition = obj && obj.Condition;
+  constructor() {
+    // this.agentID = obj && obj.agentID;
+    // this.product = obj && obj.product;
+    // this.weight = obj && obj.weight;
+    // this.stateExpires = obj && obj.stateExpires;
+    // this.condition = obj && obj.condition;
   }
 }

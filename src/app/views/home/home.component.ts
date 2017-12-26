@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.mainService.getProducts().subscribe(data => {
       this.products = data;
+      console.log(data);
       if (this.products.length === 0) {
         this.noAgents = true;
       }
