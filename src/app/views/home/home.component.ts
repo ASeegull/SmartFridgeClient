@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { ModalModule } from 'ngx-modal';
 import { MainService } from '../../services/main.service';
 import { Agent } from '../../models/agent';
 
@@ -9,8 +10,33 @@ import { Agent } from '../../models/agent';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  products: Agent[];
+  // products: Agent[];
+  products: Agent[] = [{
+      agentID: '',
+      product: 'Oil',
+      weight: 300,
+      stateExpires: '23.01.2018',
+      condition: 'ok'
+    },
+    {
+      agentID: '',
+      product: 'Milk',
+      weight: 1000,
+      stateExpires: '10.01.2018',
+      condition: 'warn'
+    },
+    {
+      agentID: '',
+      product: 'Milk',
+      weight: 1000,
+      stateExpires: '10.01.2018',
+      condition: 'expired'
+    }];
+
   noAgents = false;
+  success = false;
+  failed = false;
+
   constructor(
     public mainService: MainService,
     public router: Router
@@ -32,4 +58,5 @@ export class HomeComponent implements OnInit {
   newAgentRedirect() {
     this.router.navigate(['/newAgent']);
   }
+
 }

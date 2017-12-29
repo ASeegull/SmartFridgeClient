@@ -26,4 +26,11 @@ export class MainService {
       return this.http
         .post(environment.apiURL + 'client/addAgent', body, { observe: 'response', withCredentials: true });
   }
+
+  updateAgent(agent: Agent) {
+    const body = JSON.stringify(agent);
+    console.log(body);
+    return this.http
+      .post(environment.apiURL + 'client/updateAgent', body, { observe: 'response', withCredentials: true });
+}
 }

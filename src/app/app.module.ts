@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-modal';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +24,8 @@ import { SlidebarComponent } from './header/nav/menu/slidebar/slidebar.component
 import { SearchrecipesComponent } from './views/searchrecipes/searchrecipes.component';
 import { SlidebarService } from './services/slidebar.service';
 import { AddAgentComponent } from './views/add-agent/add-agent.component';
+import { ModalComponent } from './main/modal/modal.component';
+import { ProductComponent } from './main/product/product.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -47,10 +50,13 @@ const appRoutes: Routes = [
     RecipeComponent,
     SlidebarComponent,
     SearchrecipesComponent,
-    AddAgentComponent
+    AddAgentComponent,
+    ModalComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
+    ModalModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,

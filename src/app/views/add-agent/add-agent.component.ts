@@ -28,6 +28,6 @@ export class AddAgentComponent {
         console.log(err);
         this.failed = true;
       }
-    );;
+    );
   }
 }

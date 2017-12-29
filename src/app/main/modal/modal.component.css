@@ -1,0 +1,61 @@
+.edit {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.edit:hover {
+    color: #7ea1a1;
+    transform: translateY(1px);
+}
+
+.modalCenter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px darkslategrey;
+    z-index: 10;
+    outline: none;
+}
+
+modal-header h3 {
+    padding-left: 1.5rem;
+}
+
+modal-content form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+modal-content label {
+    flex: 1 0 20%;
+    margin: 0.7rem;
+}
+
+modal-content input {
+    flex: 1 0 60%;
+    margin: 0.7rem;
+}
+
+modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close {
+    float: rigth;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+button.close:hover {
+    color: rgb(24, 43, 43);
+}

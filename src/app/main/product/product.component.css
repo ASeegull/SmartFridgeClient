@@ -1,19 +1,5 @@
-.card {
-    width: 25%;
-    box-shadow: 0 0 5px rgb(23, 43, 43);
-    padding: 2rem 1rem;
-    background-color: white;
-    margin: 1.5rem;
-}
-
-.card > * {
+:host > * {
     margin: 1rem;
-}
-
-.content {
-    padding: 13vh 10vw;
-    display: flex;
-    flex-flow: row wrap;
 }
 
 header {
@@ -33,17 +19,14 @@ header {
     font-size: 1.2rem;
 }
 
-.options > * {
+.search {
+    margin-right: 0.5rem;
     cursor: pointer;
 }
 
-.options > *:hover {
+.search:hover {
     color: #7ea1a1;
     transform: translateY(1px);
-}
-
-.search {
-    margin-right: 0.5rem;
 }
 
 .search-accented {
@@ -96,14 +79,4 @@ header {
 .addAgent:hover {
     color: #cdd6d6;
     background-color: #367373;
-}
-
-editModal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 3rem;
-    box-shadow: 0 0 10px darkslategrey;
 }
