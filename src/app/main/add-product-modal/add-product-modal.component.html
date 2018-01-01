@@ -1,0 +1,21 @@
+<div class="addProduct" (click)="showModal();">Add<br />Product</div>
+
+<modal #addProduct (onSubmit)="onSubmit()" class="modalCenter" submitButtonLabel="Update Product">
+  <modal-header>
+      <h3>Update agent</h3>    
+      </modal-header>
+      <modal-content>
+            <form #updateProduct="ngForm">
+                <label for="product">Product</label>	
+                <input type="text" id="product" [(ngModel)]="product.name" name="name">
+                <label for="expires">Expiration Date</label>	
+                <input type="text" id="expires" [(ngModel)]="product.shelfLife" name="shelfLife">
+                <label for="units">Measurment Units</label>	
+                <input type="text" id="units" [(ngModel)]="product.units" name="units">
+                <label for="imageURL">Paste link to image</label>	
+                <input type="text" id="imageURL" [(ngModel)]="product.imageURL" name="imageURL">
+                <p *ngIf="success"><i class="fa fa-check"></i>Your agent is successfully registered</p>
+                <p *ngIf="failed"><i class="fa fa-times" aria-hidden="true"></i>Failed to send request</p>
+            </form>
+      </modal-content>
+  </modal>

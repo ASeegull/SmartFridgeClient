@@ -1,0 +1,13 @@
+.content {
+    padding: 13vh 10vw;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article {
+    width: 25%;
+    box-shadow: 0 0 5px rgb(23, 43, 43);
+    padding: 2rem;
+    background-color: white;
+    margin: 1.5rem;
+}

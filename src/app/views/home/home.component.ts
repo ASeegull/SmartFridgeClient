@@ -10,28 +10,7 @@ import { Agent } from '../../models/agent';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // products: Agent[];
-  products: Agent[] = [{
-      agentID: '',
-      product: 'Oil',
-      weight: 300,
-      stateExpires: '23.01.2018',
-      condition: 'ok'
-    },
-    {
-      agentID: '',
-      product: 'Milk',
-      weight: 1000,
-      stateExpires: '10.01.2018',
-      condition: 'warn'
-    },
-    {
-      agentID: '',
-      product: 'Milk',
-      weight: 1000,
-      stateExpires: '10.01.2018',
-      condition: 'expired'
-    }];
+  products: Agent[];
 
   noAgents = false;
   success = false;
@@ -50,9 +29,6 @@ export class HomeComponent implements OnInit {
         this.noAgents = true;
       }
     });
-  }
-
-  searchByProduct() {
   }
 
   newAgentRedirect() {

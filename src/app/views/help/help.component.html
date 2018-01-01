@@ -1,0 +1,7 @@
+<app-header></app-header>
+<section class="content">
+  <article *ngFor="let product of products">
+    <app-item [product]="product"></app-item>
+  </article>
+</section>
+<app-add-product-modal></app-add-product-modal>

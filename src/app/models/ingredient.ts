@@ -1,5 +1,7 @@
-export interface Ingredient {
-  ProductID: number;
-  RecipeID: number;
-  Amount: number;
+export class Ingredient {
+  ID: string;
+  name: string;
+  shelfLife: number;
+  units: string;
+  imageURL: string;
 }

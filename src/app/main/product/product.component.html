@@ -1,11 +1,10 @@
 <header>
   <h3 class="title">{{ product.product | titlecase }}</h3>
   <div class="options">
-      <div class="search" title="Search recepies by this product"
+      <app-search-modal title="Search recepies by this product"
           [ngClass]="{'search-accented':product.condition === 'warn'}"
-          (click)="searchByProduct();">
-          <i class="fa fa-search"></i>
-      </div>
+          [productName]="product.product">
+      </app-search-modal>
       <app-modal [agent]="product"></app-modal>
   </div>
 </header>

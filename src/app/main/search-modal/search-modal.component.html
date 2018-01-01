@@ -1,0 +1,37 @@
+<div  class="search" (click)="search();">
+  <i class="fa fa-search"></i>
+</div>
+
+<modal #searchresults>
+  <modal-head>
+    <h3>Search Results</h3>
+  </modal-head>
+  <modal-content>
+      <article class="card" *ngFor="let recipe of recipes">
+          <header>
+              <h3 class="title">{{ recipe.title }}</h3>
+              <div class="tags">
+                  <div class="time">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      {{ recipe.coockingTimeMin }} min</div>
+                  <div class="complexity" [ngClass]="{
+                      'complexity-easy':recipe.complexity === 'easy',
+                      'complexity-normal':recipe.complexity === 'normal',
+                      'complexity-hard':recipe.complexity === 'hard'
+                  }">
+                      <i class="fa" [ngClass]="{
+                          'fa-check':recipe.complexity === 'easy',
+                          'fa-cog':recipe.complexity === 'normal',
+                          'fa-cogs':recipe.complexity === 'hard'
+                      }" arria-hidden="true"></i>
+                  {{ recipe.complexity }}
+                  </div>
+              </div>
+          </header>
+          <main>
+              <div class="description">{{ recipe.description }}</div>
+              <div class="ingredients">{{ recipe.ingredients }}</div>
+          </main>
+      </article>
+  </modal-content>
+</modal>

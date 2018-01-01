@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
-  auth = true;
+  auth = false;
 
   constructor(
     public router: Router,

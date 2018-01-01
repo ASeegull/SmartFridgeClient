@@ -1,5 +1,3 @@
-import { Ingredient } from './ingredient';
-
 export class Recipe {
   title: string;
   description: string;

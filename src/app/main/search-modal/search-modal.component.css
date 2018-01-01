@@ -1,0 +1,58 @@
+.card {
+    width: 450px;
+    box-shadow: 0 0 5px rgb(23, 43, 43);
+    padding: 2rem 1rem;
+    background-color: white;
+    margin: 2rem 1rem;
+}
+
+.card > * {
+    margin: 1rem;
+}
+
+.content {
+    padding: 13vh 10vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    flex: 1 1 60%;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    justify-content: space-between;
+}
+
+.complexity {
+    padding: 0.3rem 0.3rem;
+    border-radius: 15px;
+    align-content: center;
+}
+
+.complexity-easy {
+    background-color: #84d511;
+}
+
+.complexity-normal {
+    background-color: rgb(255, 255, 43);
+    color: #4d4141;
+}
+
+.complexity-hard {
+    background-color: rgb(216, 45, 45);
+    color: #ffe2e2;
+}
+
+.description {
+    margin-bottom: 0.7rem;
+}

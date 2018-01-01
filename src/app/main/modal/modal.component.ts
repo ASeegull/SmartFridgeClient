@@ -21,10 +21,12 @@ export class ModalComponent {
   ) { }
 
   openModal() {
+    console.log(this.editAgent);
     this.editAgent.open();
   }
 
   onSubmit() {
+    console.log('Hi!');
     this.mainService.updateAgent(this.agent)
     .subscribe(
       (res) => {

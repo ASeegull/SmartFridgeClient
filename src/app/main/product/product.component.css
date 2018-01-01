@@ -39,7 +39,6 @@ header {
 
 .product-expired {
     border: 2px solid rgb(216, 45, 45);
-    filter: grayscale(100%);
 }
 
 .text-ok {

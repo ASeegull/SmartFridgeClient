@@ -1,0 +1,31 @@
+.product-image {
+    width: 100%;
+}
+
+.button {
+    height: 1.3rem;
+    cursor: pointer;
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+    text-align: center;
+    border: 2px solid darkslategrey;
+}
+
+.update {
+    background-color: #aab9b9;
+}
+
+.update:hover {
+    background-color: darkslategray;
+    color: white;
+}
+
+.delete {
+    color: #653959;
+    background-color: #e4c3c3;
+}
+
+.delete:hover {
+    background-color: #653959;
+    color: #e4c3c3;
+}

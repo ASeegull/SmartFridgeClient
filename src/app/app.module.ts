@@ -26,13 +26,18 @@ import { SlidebarService } from './services/slidebar.service';
 import { AddAgentComponent } from './views/add-agent/add-agent.component';
 import { ModalComponent } from './main/modal/modal.component';
 import { ProductComponent } from './main/product/product.component';
+import { HelpComponent } from './views/help/help.component';
+import { AddProductModalComponent } from './main/add-product-modal/add-product-modal.component';
+import { UpdateProductModalComponent } from './main/update-product-modal/update-product-modal.component';
+import { SearchModalComponent } from './main/search-modal/search-modal.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: AuthComponent},
   {path: 'recipes', component: RecipesComponent},
   {path: 'searchrecipes', component: SearchrecipesComponent},
-  {path: 'newAgent', component: AddAgentComponent}
+  {path: 'newAgent', component: AddAgentComponent},
+  {path: 'improveapp', component: HelpComponent}
 ];
 
 @NgModule({
@@ -52,7 +57,11 @@ const appRoutes: Routes = [
     SearchrecipesComponent,
     AddAgentComponent,
     ModalComponent,
-    ProductComponent
+    ProductComponent,
+    HelpComponent,
+    AddProductModalComponent,
+    UpdateProductModalComponent,
+    SearchModalComponent
   ],
   imports: [
     BrowserModule,

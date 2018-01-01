@@ -2,21 +2,18 @@
     <i class="fa fa-cog"></i>
 </div>
 
-<modal #editAgent (onSubmit)="onSubmit()" class="modalCenter">
+<modal #editAgent (onSubmit)="onSubmit()" class="modalCenter" submitButtonLabel="Update Agent">
 <modal-header>
     <h3>Update agent</h3>    
     </modal-header>
     <modal-content>
-        <form #updateAgent="ngForm" (submit)="onSubmit()">
+        <form #updateAgent="ngForm">
             <label for="product">Product</label>	
             <input type="text" id="product" [(ngModel)]="agent.product" name="product">
             <label for="expires">Expiration Date</label>	
             <input type="text" id="expires" [(ngModel)]="agent.stateExpires" name="stateExpires">
+            <p *ngIf="success"><i class="fa fa-check"></i>Your agent is successfully registered</p>
+            <p *ngIf="failed"><i class="fa fa-times" aria-hidden="true"></i>Failed to send request</p>
         </form>
     </modal-content>
-    <modal-footer>
-        <button class="submit" type="submit">Update Agent</button>
-        <p *ngIf="success"><i class="fa fa-check"></i>Your agent is successfully registered</p>
-        <p *ngIf="failed"><i class="fa fa-times" aria-hidden="true"></i>
-    </modal-footer>
 </modal>
