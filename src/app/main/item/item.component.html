@@ -2,8 +2,7 @@
   <h3 class="title">{{ product.name | titlecase }}</h3>
 </header>
 <main>
-  <img class="product-image" [src]="product.imageURL" alt="Помідорка"
-  [ngClass]="{'product-expired':product.condition === 'expired'}">
+  <img class="product-image" [src]="product.imageURL" alt="Product image">
   <p> Shelf Life: {{ product.shelfLife }} </p>
   <p> Measurement Units: {{ product.units }} </p>
   <app-update-product-modal [product]="product"></app-update-product-modal>

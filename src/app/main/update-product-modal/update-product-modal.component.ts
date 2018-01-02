@@ -20,6 +20,7 @@ export class UpdateProductModalComponent implements OnInit {
   constructor(public mainService: MainService) { }
 
   ngOnInit() {
+    console.log(this.product);
   }
 
   openModal() {

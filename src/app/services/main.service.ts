@@ -27,16 +27,19 @@ export class MainService {
 
   addAgent(agent: Agent) {
       const body = JSON.stringify(agent);
-      console.log(body);
       return this.http
         .post(environment.apiURL + 'client/addAgent', body, { observe: 'response', withCredentials: true });
   }
 
   updateAgent(agent: Agent) {
     const body = JSON.stringify(agent);
-    console.log(body);
     return this.http
       .post(environment.apiURL + 'client/updateAgent', body, { observe: 'response', withCredentials: true });
+  }
+
+  deleteAgent(id: string) {
+    return this.http
+      .delete(environment.apiURL + `client/removeAgent/${id}`, { observe: 'response', withCredentials: true });
   }
 
   getProductList() {
@@ -45,20 +48,18 @@ export class MainService {
 
   addToProductList(ingredient: Ingredient) {
     const body = JSON.stringify(ingredient);
-    console.log(body);
     return this.http
       .post(environment.apiURL + 'client/addProduct', body, { observe: 'response', withCredentials: true });
   }
 
   updateProductList(ingredient: Ingredient) {
     const body = JSON.stringify(ingredient);
-    console.log(body);
     return this.http
       .put(environment.apiURL + 'client/updateProduct', body, { observe: 'response', withCredentials: true });
   }
 
   deleteProduct(id: string) {
     return this.http
-      .delete(environment.apiURL + `/products/remove/${id}`, { observe: 'response', withCredentials: true });
+      .delete(environment.apiURL + `client/products/remove/${id}`, { observe: 'response', withCredentials: true });
   }
 }

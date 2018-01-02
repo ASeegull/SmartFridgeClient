@@ -2,14 +2,14 @@
   <h3 class="title">{{ product.product | titlecase }}</h3>
   <div class="options">
       <app-search-modal title="Search recepies by this product"
-          [ngClass]="{'search-accented':product.condition === 'warn'}"
-          [productName]="product.product">
+            [ngClass]="{'search-accented':product.condition === 'warn'}"
+            [productName]="product.product">
       </app-search-modal>
       <app-modal [agent]="product"></app-modal>
   </div>
 </header>
 <main>
-  <img class="product-image" src="assets/tomato.jpg" alt="Помідорка"
+  <img class="product-image" [src]="product.imageURL" alt="product-image"
   [ngClass]="{'product-expired':product.condition === 'expired'}">
   <p>Weight: {{ product.weight }}g</p>
   <p>

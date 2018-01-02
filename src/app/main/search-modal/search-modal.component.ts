@@ -9,6 +9,7 @@ import { MainService } from '../../services/main.service';
 })
 export class SearchModalComponent implements OnInit {
   recipes: Recipe[];
+  noresults = false;
 
   @Input() productName: string;
 
@@ -20,11 +21,11 @@ export class SearchModalComponent implements OnInit {
   }
 
   search() {
+    this.searchresults.open();
     this.mainService.getRecipesByProduct(this.productName).subscribe(
-      data => { this.recipes = data; },
+      data => { this.recipes = data; if (data.length === 0) { this.noresults = true; } },
       err => { console.log(err); }
     );
-    this.searchresults.open();
   }
 
 }

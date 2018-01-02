@@ -1,12 +1,13 @@
-<div  class="search" (click)="search();">
+<div class="search" (click)="search();">
   <i class="fa fa-search"></i>
 </div>
 
-<modal #searchresults>
+<modal #searchresults class="modalCenter">
   <modal-header>
     <h3>Search Results</h3>
   </modal-header>
   <modal-content>
+      <h3 class="noresults" *ngIf="noresults">No recipes found</h3>
       <article class="card" *ngFor="let recipe of recipes">
           <header>
               <h3 class="title">{{ recipe.title }}</h3>

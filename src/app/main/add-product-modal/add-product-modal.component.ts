@@ -9,7 +9,7 @@ import { Ingredient } from '../../models/ingredient';
 })
 
 export class AddProductModalComponent implements OnInit {
-  product = new(Ingredient);
+  product = new Ingredient();
   @ViewChild('addProduct')
   addProduct;
 
@@ -19,6 +19,8 @@ export class AddProductModalComponent implements OnInit {
   constructor(public mainService: MainService) { }
 
   ngOnInit() {
+    console.log('#########');
+    console.log(this.product);
   }
 
   showModal() {
